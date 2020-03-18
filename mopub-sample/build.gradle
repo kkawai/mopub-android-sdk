@@ -100,6 +100,17 @@ dependencies {
     implementation 'com.unity3d.ads:unity-ads:3.3.0@aar'
     implementation 'com.verizon.ads:android-vas-standard-edition:1.2.0'
     implementation 'com.github.vungle:vungle-android-sdk:6.4.11'
+    implementation 'com.mintegral.msdk:mtgbanner:12.2.31'
+    implementation 'com.mintegral.msdk:interstitialvideo:12.2.31'
+    implementation 'com.mintegral.msdk:videojs:12.2.31'
+    implementation 'com.mintegral.msdk:nativeex:12.2.31'
+    implementation 'com.mintegral.msdk:mtgjscommon:12.2.31'
+    implementation 'com.mintegral.msdk:playercommon:12.2.31'
+    implementation 'com.mintegral.msdk:reward:12.2.31'
+    implementation 'com.mintegral.msdk:videocommon:12.2.31'
+    implementation 'com.mintegral.msdk:common:12.2.31'
+    implementation 'com.mintegral.msdk:mtgnative:12.2.31'
+    implementation 'com.mintegral.msdk:mtgbid:12.2.31'
 
     // MoPub Custom Network Adapters
     implementation 'com.mopub.mediation:adcolony:4.1.0.0'
@@ -114,6 +125,9 @@ dependencies {
     implementation 'com.mopub.mediation:unityads:3.3.0.0@aar'
     implementation 'com.mopub.mediation:verizon:1.2.0.1'
     implementation 'com.mopub.mediation:vungle:6.4.11.4'
+// Mintegral
+    implementation 'com.mopub.mediation:mintegral:12.2.31.0'
+
 
     implementation 'androidx.browser:browser:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

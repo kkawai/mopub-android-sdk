@@ -173,7 +173,7 @@ public abstract class AbstractBannerDetailFragment extends Fragment implements B
         mViewHolder.mUserDataKeywordsField.setText(getArguments().getString(MoPubListFragment.USER_DATA_KEYWORDS_KEY, ""));
         hideSoftKeyboard(mViewHolder.mKeywordsField);
 
-        final String adUnitId = mMoPubSampleAdUnit.getAdUnitId();
+        final String adUnitId = "6713fa73f4914884914dfbeef4241a7b";//mMoPubSampleAdUnit.getAdUnitId();
         mViewHolder.mDescriptionView.setText(mMoPubSampleAdUnit.getDescription());
         mViewHolder.mAdUnitIdView.setText(adUnitId);
         mViewHolder.mLoadButton.setOnClickListener(new View.OnClickListener() {
