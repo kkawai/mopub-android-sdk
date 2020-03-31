@@ -124,11 +124,7 @@ public class MoPubSampleActivity extends AppCompatActivity
 
         final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(
                 "b195f8dd8ded45fe847ad89ed1d016da");
-        if (BuildConfig.DEBUG) {
-            configBuilder.withLogLevel(DEBUG);
-        } else {
-            configBuilder.withLogLevel(INFO);
-        }
+        configBuilder.withLogLevel(DEBUG);
 
         SampleActivityUtils.addDefaultNetworkConfiguration(configBuilder);
 
