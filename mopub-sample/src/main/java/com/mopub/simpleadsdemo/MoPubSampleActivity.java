@@ -33,6 +33,7 @@ import com.mopub.common.privacy.ConsentStatus;
 import com.mopub.common.privacy.ConsentStatusChangeListener;
 import com.mopub.common.privacy.PersonalInfoManager;
 import com.mopub.common.util.DeviceUtils;
+import com.mopub.mobileads.MintegralAdapterConfiguration;
 import com.mopub.mobileads.MoPubConversionTracker;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.network.ImpressionData;
@@ -42,7 +43,9 @@ import com.mopub.network.ImpressionsEmitter;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.LinkedBlockingDeque;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -125,6 +128,13 @@ public class MoPubSampleActivity extends AppCompatActivity
         final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(
                 "b195f8dd8ded45fe847ad89ed1d016da");
         configBuilder.withLogLevel(DEBUG);
+
+        Map mintegralConfig = new HashMap();
+        mintegralConfig.put("appId", "118690");
+        mintegralConfig.put("appKey", "7c22942b749fe6a6e361b675e96b3ee9");
+
+        configBuilder.withMediatedNetworkConfiguration(MintegralAdapterConfiguration.class.getName(),
+                mintegralConfig);
 
         SampleActivityUtils.addDefaultNetworkConfiguration(configBuilder);
 
@@ -398,7 +408,6 @@ public class MoPubSampleActivity extends AppCompatActivity
                     .commit();
         }
     }
-
 
 
     private void onClearLogs() {
