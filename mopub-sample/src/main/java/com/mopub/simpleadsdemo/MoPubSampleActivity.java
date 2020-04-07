@@ -35,6 +35,7 @@ import com.mopub.common.privacy.PersonalInfoManager;
 import com.mopub.common.util.DeviceUtils;
 import com.mopub.mobileads.MoPubConversionTracker;
 import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.VerizonAdapterConfiguration;
 import com.mopub.network.ImpressionData;
 import com.mopub.network.ImpressionListener;
 import com.mopub.network.ImpressionsEmitter;
@@ -42,7 +43,9 @@ import com.mopub.network.ImpressionsEmitter;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.LinkedBlockingDeque;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -124,11 +127,13 @@ public class MoPubSampleActivity extends AppCompatActivity
 
         final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(
                 "b195f8dd8ded45fe847ad89ed1d016da");
-        if (BuildConfig.DEBUG) {
-            configBuilder.withLogLevel(DEBUG);
-        } else {
-            configBuilder.withLogLevel(INFO);
-        }
+        configBuilder.withLogLevel(DEBUG);
+
+        Map verizonConfigs = new HashMap();
+        verizonConfigs.put("siteId", "2c9d2b50015a5a816bdfa4deb52002f8");
+        verizonConfigs.put("siteId", "2c9d2b50015a5a65df416b90c73100a5");
+
+        configBuilder.withMediatedNetworkConfiguration(VerizonAdapterConfiguration.class.getName(), verizonConfigs);
 
         SampleActivityUtils.addDefaultNetworkConfiguration(configBuilder);
 
